@@ -1,0 +1,22 @@
+{
+  "name": "realtimechat",
+  "version": "0.1.0",
+  "description": "This is a real time chat application. multiple clients can chat.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "socket",
+    "express"
+  ],
+  "author": "Dhanesh Kapadiya",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "keypress": "^0.2.1",
+    "path": "^0.12.7",
+    "socket.io": "^1.6.0"
+  }
+}

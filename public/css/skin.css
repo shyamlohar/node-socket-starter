@@ -1,0 +1,205 @@
+body {
+    height: calc(100vh - 3vh);
+    font-family: 'Lato', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.hidden{
+    display: none;
+}
+
+.headerSection {
+    background: #34495e;
+    width: calc(100% - 60px);
+    display: inline-block;
+    padding: 10px 30px;
+    margin: auto;
+}
+
+.logoSection {
+    float: left;
+    height: 24px;
+    width: 41px;
+    background: #8e44ad;
+    border-radius: 50px;
+    padding: 10px 0px;
+}
+
+.logo {
+    font-size: 21px;
+    margin: auto;
+    color: #2c3e50;
+    font-weight: bolder;
+}
+
+.detailSection {
+    float: left;
+    height: 100%;
+    width: calc(100% - 145px);
+    margin-left: 30px;
+}
+
+.usernameField {
+    height: 25px;
+    width: 95%;
+    padding: 10px 20px;
+    border-radius: 50px;
+    float: left;
+    font-size: large;
+    border: none;
+}
+
+
+.sendBtn {
+    height: 41px;
+    width: 42px;
+    border-radius: 50px;
+    background: #8e44ad;
+    margin-top: 2px;
+    border: none;
+}
+
+.detailSection .sendBtn {
+    margin-left: -45px;
+}
+
+.footerSection{
+    margin: auto;
+}
+
+.mainContentSection {
+    height: 100%;
+    width: 50%;
+    margin: auto;
+    border-radius: 20px 20px 20px 20px;
+    background: #bdc3c7;
+}
+
+.wholePhone {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.msgViewScreen {
+    position: absolute;
+    bottom: 75px;
+    width: 100%;
+    max-height: calc(100% - 95px);
+    padding-left: 0;
+    margin-top: 0;
+    overflow-y: scroll;
+    padding-right: 17px;
+}
+
+.msgInputSendSectio {
+    height: 70px;
+    background: #95a5a6;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0px 0px 20px 20px;
+    padding: 10px 0px 5px;
+}
+
+.msgBox {
+    height: calc(100% - 20px);
+    margin: 2px 30px;
+    border-radius: 50px;
+    width: calc(100% - 115px);
+    padding: 0px 25px;
+    font-size: medium;
+    float: left;
+    border: none;
+}
+
+.msgInputSendSectio .sendBtn {
+    height: calc(100% - 28px);
+    margin: 6px 0px;
+    width: 45px;
+    margin-left: -80px;
+    background: #59FF59;
+    float: left;
+    padding: 10px 0px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+.myMsgContainer {
+    clear: both;
+    width: calc(100% - 20px);
+    margin: 5px 10px;
+    display: inline-block;
+}
+
+.yourMsgContainer {
+    clear: both;
+    width: calc(100% - 20px);
+    margin: 5px 10px;
+    display: inline-block;
+    
+}
+
+.otherMsg {
+    width: 70%;
+    float: left;
+    padding: 10px;
+    background: #C8F7C5;
+    overflow-wrap: break-word;
+    margin: 0px 10px;
+    border-radius: 10px 10px 10px 0px;
+    box-shadow: 4px 4px 10px -4px;
+}
+
+.myMsg {
+    width: 70%;
+    float: right;
+    padding: 10px;
+    background: #C8F7C5;
+    overflow-wrap: break-word;
+    margin: 0px 10px;
+    border-radius: 10px 10px 0px 10px;
+    box-shadow: -4px 4px 10px -4px;
+}
+
+.footerSection{
+    height: 100px;
+    width: 100%;
+    display: inline-block;
+    background: red;
+}
+
+.typingLi{
+    min-width: 100px;
+    max-width: calc(77% - 20px);
+    clear: both;
+    display: none;
+    position: relative;
+    bottom: 0;
+    margin: 5px 10px;
+    word-break: break-all;
+}
+
+.otherNewMsg {
+    float: left;
+    clear: left;
+    padding: 10px;
+    background: #C8F7C5;
+    margin: 0px 10px;
+    border-radius: 10px 10px 10px 0px;
+    box-shadow: 4px 4px 10px -4px;
+}
+
+@media only screen and (max-width: 768px) {
+    .mainContentSection {
+        width: 100%;
+        height: (100% - 60px);
+    }
+}

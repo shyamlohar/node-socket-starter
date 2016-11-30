@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RealTime Chat</title>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/chat.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/skin.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
+	<meta name="viewport" content="width=device-width">
+    
+</head>
+<body>
+	<div class="headerSection">
+		<div class="logoSection">
+			<div class="logo">RTC</div>
+		</div>
+		<div class="detailSection">
+			<input type="text" name="UserName" class="usernameField" placeholder="Enter your UserName"/>
+			<a><button id="usernameBtn" name="Enter" class="sendBtn">Start</button></a>
+		</div>
+	</div>
+	<div class="mainContentSection">
+		<div id="wholePhone" style="display: none;">
+			<ul id="chatUl" class="msgViewScreen">
+				<!--all messages goes here-->
+				<li class='typingLi'><div class='otherNewMsg'></div></li>
+			</ul>
+			<div class="msgInputSendSectio">
+				<input id="messageBox" type="text" class="msgBox" placeholder="Enter message..."/>
+				<button id="messageBtn" type="submit" class="sendBtn" name="Send" >Send</button>
+			</div>
+			
+		</div>
+	</div>
+
+</body>
+</html>
