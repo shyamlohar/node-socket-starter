@@ -6,11 +6,12 @@ $(function (){
 		usernameBtn = $("#usernameBtn"),
 		messageBox = $("#messageBox"),
 		sendBtn = $("#messageBtn"),
-		ul = $("ul"),
+		ul = $("#chatUl"),
 		wholePhone = $('#wholePhone'),
+		msgInputSendSectio = $('#msgInputSendSectio'),
 		msg;
 
-	var elem = document.getElementById('chatUl');
+	var elem = ul;
 
 	var socket = io.connect();
 	
@@ -50,15 +51,20 @@ $(function (){
 				var myLi = addLi(msg, "myMsgContainer", "myMsg");				
 				myLi.insertBefore('.typingLi').slideUp(0).fadeIn(500);				//ul.append(myLi.slideUp(0).fadeIn());
 							
-				elem.scrollTop = elem.scrollHeight;	
+				//elem.scrollTop = elem.scrollHeight;
+				elem.scrollTop(elem[0].scrollHeight);
 				messageBox.val("");
 			}
 		});
 
 		//--> When user types anything, broadcast characters to other clients.
-		messageBox.on('propertychange change input paste keyup', function(event) {
-			//To-Do: do nothing when user clicks on special keys like, Ctrl, Alt etc. 
-			if(event.which !== 13){
+		messageBox.on('propertychange change input paste', function(event) {
+
+			if((messageBox.val() == '') && (event.which !== 8)){
+				socket.emit('stoppedTyping');
+			}
+
+			if(messageBox.val() != ''){
 				socket.emit('typing', $('#messageBox').val());
 			}
 			else{
@@ -68,7 +74,8 @@ $(function (){
 
 		//--> When user starts typing, display typingLi <li> to broadcast what user is typing. and empty <li> when user hits enter.
 		socket.on('someoneIsTyping', function(data){
-			$('.typingLi').css('display', 'inline-block');
+			$('.typingLi').show();
+			elem.scrollTop(elem[0].scrollHeight);
 			if(data === "enter"){
 				$('.typingLi').find('div').text('');
 			}
@@ -78,7 +85,7 @@ $(function (){
 
 		//--> Hides typingLi <li> when user stops typing. 
 		socket.on('someoneHasStoppedTyping', function(){
-			$('.typingLi').css('display', 'none');
+			$('.typingLi').hide();
 		});
 
 		//--> Broadcast message to evety other client on server.
@@ -93,7 +100,7 @@ $(function (){
 });
 
 function addLi(messageText, liClass, divClass) {
-	var newLi = $("<li class="+liClass+">  <div class="+divClass+"> </div> </li>");
+	var newLi = $("<div class="+liClass+">  <div class="+divClass+"> </div> </div>");
 	newLi.find('div').text(messageText);
 	return newLi;
 }
