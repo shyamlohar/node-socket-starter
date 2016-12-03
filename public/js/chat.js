@@ -8,7 +8,7 @@ $(function (){
 		sendBtn = $("#messageBtn"),
 		ul = $("#chatUl"),
 		wholePhone = $('#wholePhone'),
-		msgInputSendSectio = $('#msgInputSendSectio'),
+		msgInputSendSection = $('#msgInputSendSection'),
 		msg;
 
 	var elem = ul;

@@ -100,7 +100,7 @@ a{
     display: inline-table;
 }
 
-.msgInputSendSectio {
+.msgInputSendSection {
     height: 70px;
     background: #95a5a6;
     position: absolute;
@@ -121,7 +121,7 @@ a{
     border: none;
 }
 
-.msgInputSendSectio .sendBtn {
+.msgInputSendSection .sendBtn {
     height: calc(100% - 28px);
     margin: 6px 0px;
     width: 45px;
